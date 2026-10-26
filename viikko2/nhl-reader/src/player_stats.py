@@ -1,8 +1,13 @@
+"""Laske pelaajia koskevia arvoja."""
+
 class PlayerStats:
+    """Kasittele tilastoja."""
     def __init__(self, reader):
+        """Alustaa tilastot hakemalla tietoa lukijalta."""
         self.reader=reader
 
     def top_scores_by_nationality(self, nationality):
+        """Palauttaa tietyn kansallisuuden pelaajat järjestyksessä."""
         players=self.reader.get_players()
 
         nationality_players=[]

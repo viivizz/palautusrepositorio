@@ -1,9 +1,12 @@
+"""NHL-pelaajien kasittely."""
+
 from rich.console import Console
 from rich.table import Table
 from player_reader import PlayerReader
 from player_stats import PlayerStats
 
 def main():
+    """Antaa pelaajien tiedot ja tulostaa taulukon."""
     season=input("Season (for example 2024-25): ")
     nationality=input("Nationality (for example FIN): ")
     url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players"
@@ -19,7 +22,6 @@ def main():
     table.add_column("goals", justify="right", style="green")
     table.add_column("assists", justify="right", style="green")
     table.add_column("points", justify="right", style="green")
-   
 
     for player in players:
         points=player.goals+player.assists

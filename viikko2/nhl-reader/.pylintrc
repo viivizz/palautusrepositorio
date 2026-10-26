@@ -1,0 +1,8 @@
+[MAIN]
+
+[FORMAT]
+max-line-length=120
+indent-string='    '
+
+[MESSAGES CONTROL]
+disable=too-few-public-methods
