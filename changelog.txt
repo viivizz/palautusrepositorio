@@ -1,0 +1,2 @@
+Muutokset:
+- Muokattu index.py tiedostoa
