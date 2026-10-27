@@ -1,4 +1,5 @@
 # tehdään alussa importit
+#muutos alkuperäisessä kloonissa
 
 from logger import logger
 from summa import summa
