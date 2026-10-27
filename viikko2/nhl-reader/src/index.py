@@ -8,14 +8,21 @@ from player_stats import PlayerStats
 def main():
     """Antaa pelaajien tiedot ja tulostaa taulukon."""
     season=input("Season (for example 2024-25): ")
-    nationality=input("Nationality (for example FIN): ")
+    nationality=input("Nationality (for example FIN, or leave empty to use team): ")
+    team=input("Team (for example TBL, or leave empty to use nationality): ")
     url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players"
     reader=PlayerReader(url)
     stats=PlayerStats(reader)
-    players=stats.top_scores_by_nationality("FIN")
+
+    if team:
+        players=stats.top_scores_by_team(team)
+        title=f"Season {season} players from {team}"
+    else:
+        players=stats.top_scores_by_nationality(nationality)
+        title=f"Season {season} players from {nationality}"
 
     console=Console()
-    table=Table(title=f"Season {season} players from {nationality}")
+    table=Table(title=title)
 
     table.add_column("Released", style="cyan")
     table.add_column("teams", style="magenta")
