@@ -1,0 +1,5 @@
+Daily scrum on lyhyt päivittäinen palaveri, jossa käsitellään sprintin edistymistä ja tehdään tarvittavia muutoksia työsuunnitelmaan. Siinä käsitellään mm. Aikataulua, päivän työtehtäviä sekä mahdollisia ongelmia.  
+
+Hyvä ja toimiva daily scrum edistää koko tiimin hyvinvointia ja vie ryhmää lähemmäs tavoitetta. Hyvän daily scrumin piirteisiin kuuluu avoimuus, turvallisuus ja hyvä kommunikaatio. Ryhmän jäsenten tulee uskaltaa kertoa avoimesti vastaan tulleista ongelmista sekä huomaamistaan parannuksen kohteista ilman huolta muiden jäsenten mielipiteistä. Lisäksi ryhmässä on tärkeä kertoa mielipiteitään toisia kunnioittavasti ja tasa-arvoisesti, jotta jokaisella jäsenellä on turvallinen olla ryhmässä. Toimiva kommunikaatio on myös avain hyvään daily scrumiin, jotta tarvittavat asiat saadaan käsiteltyä ajoissa ja ryhmä etenee sprintissä kohti tavoitettaan. 
+
+ 
