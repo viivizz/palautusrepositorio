@@ -11,20 +11,25 @@ class Ostoskori:
     def hinta(self):
         return sum(ostos.hinta() for ostos in self._ostokset)
 
-    def lisaa_tuote(self, lisattava: Tuote):
+    def _etsi_ostos(self, tuote: Tuote):
         for ostos in self._ostokset:
-            if ostos.tuotteen_nimi() == lisattava.nimi():
-                ostos.muuta_lukumaaraa(1)
-                return
+            if ostos.tuotteen_nimi() == tuote.nimi():
+                return ostos
+        return None
+
+    def lisaa_tuote(self, lisattava: Tuote):
+        ostos = self._etsi_ostos(lisattava)
+        if ostos:
+            ostos.muuta_lukumaaraa(1)
+            return
         self._ostokset.append(Ostos(lisattava))
 
     def poista_tuote(self, poistettava: Tuote):
-        for ostos in self._ostokset:
-            if ostos.tuotteen_nimi() == poistettava.nimi():
-                ostos.muuta_lukumaaraa(-1)
-                if ostos.lukumaara() == 0:
-                    self._ostokset.remove(ostos)
-                return
+        ostos = self._etsi_ostos(poistettava)
+        if ostos:
+            ostos.muuta_lukumaaraa(-1)
+            if ostos.lukumaara() == 0:
+                self._ostokset.remove(ostos)
 
     def tyhjenna(self):
         self._ostokset.clear()
