@@ -1,1 +1,1 @@
-testi 
+print("Testi 1")
