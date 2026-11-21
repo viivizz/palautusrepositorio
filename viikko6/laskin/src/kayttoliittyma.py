@@ -22,6 +22,8 @@ class Kayttoliittyma:
         Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
         }
 
+        self._edellinen_komento = None
+
     def kaynnista(self):
         self._arvo_var = StringVar()
         self._arvo_var.set(self._sovelluslogiikka.arvo())
@@ -67,9 +69,21 @@ class Kayttoliittyma:
 
     def _suorita_komento(self, komento):
         komento_olio = self._komennot[komento]
-        komento_olio.suorita()
+        
+        if komento != Komento.KUMOA:
+            komento_olio.suorita()
+            self._edellinen_komento = komento_olio
+        else:
+            if self._edellinen_komento is not None:
+                self._edellinen_komento.kumoa()
+                self._edellinen_komento = None
 
-        self._kumoa_painike["state"] = constants.NORMAL
+
+        if self._edellinen_komento is None:
+            self._kumoa_painike["state"] = constants.DISABLED
+        else:
+            self._kumoa_painike["state"] = constants.NORMAL
+
 
         if self._sovelluslogiikka.arvo() == 0:
             self._nollaus_painike["state"] = constants.DISABLED
